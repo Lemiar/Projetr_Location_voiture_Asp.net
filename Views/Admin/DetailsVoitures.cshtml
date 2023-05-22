@@ -1,0 +1,179 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LoyerVoiture.Models.Voiture
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+
+<br />
+<br />
+<h2>Car Details</h2>
+
+
+<div>
+    <hr />
+    <table>
+        <tr>
+            <td>
+                <dl class="dl-horizontal">
+                    <dt style="color:white">
+                        @Html.DisplayName("Car name")
+                    </dt>
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.nom)
+                    </dd>
+                    <dt style="color:white">
+                        @Html.DisplayName("Fuel type")
+                    </dt>
+
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.carburant)
+                    </dd>
+
+                    <dt style="color:white">
+                        @Html.DisplayNameFor(model => model.kilometrage)
+                    </dt>
+
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.kilometrage)
+                    </dd>
+
+                    <dt style="color:white">
+                        @Html.DisplayName("Car price")
+                    </dt>
+
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.prix)
+                    </dd>
+
+                    <dt style="color:white">
+                        @Html.DisplayName("Car Model")
+                    </dt>
+
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.model)
+                    </dd>
+
+
+
+                    <dt style="color:white">
+                        @Html.DisplayName("Car color")
+                    </dt>
+
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.couleur)
+                    </dd>
+
+                    <dt style="color:white">
+                        @Html.DisplayName("Number of places")
+                    </dt>
+
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.nombrePlace)
+                    </dd>
+
+                    <dt style="color:white">
+                        @Html.DisplayName("Horsepower")
+                    </dt>
+
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.chevaux)
+                    </dd>
+                    <dt style="color:white">
+                        @Html.Label("Owner")
+                    </dt>
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.utilisateur.nom)   @Html.DisplayFor(model => model.utilisateur.prenom)
+                    </dd>
+
+                    <dt style="color:white">
+                        @Html.Label("Special deal")
+                    </dt>
+                    <dd style="color:white">
+                        @Html.DisplayFor(model => model.special)
+                    </dd>
+
+
+                </dl>
+            </td>
+            <td>
+                <div class="col-md-1"></div>
+                <div class="col-md-3 ">
+                    <img src="~/images/@Model.image" style="width:400px;height:300px;margin-left:300px" />
+
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<p>
+
+    @Html.ActionLink("Back", "accueil", 1, new { @class = "btn btn-primary" }) 
+
+    @Html.ActionLink("Edit", "EditV", new { id = Model.id } , new { @class = "btn btn-primary" })
+
+    @Html.ActionLink("Delete", "DeleteV", new { id = Model.id } , new { @class = "btn btn-primary" })
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

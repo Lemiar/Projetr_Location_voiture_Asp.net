@@ -1,0 +1,129 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLocat2.cshtml";
+}
+@model LoyerVoiture.Models.Voiture
+
+@{
+    ViewBag.Title = "Details";
+}
+<h2> Car's Details </h2>
+
+
+<div class="main">
+    <hr />
+    <table>
+        <tr>
+            <td>
+                <dl class="dl-horizontal">
+                    <dt class="th">
+                        @Html.DisplayName("Name of car"):
+                    </dt>
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.nom)
+                    </dd>
+                    <dt class="th">
+                        @Html.DisplayName("fuel"):
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.carburant)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayNameFor(model => model.kilometrage)
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.kilometrage):
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("Price"):
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.prix)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("Model"):
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.model)
+                    </dd>
+
+
+
+                    <dt class="th">
+                        @Html.DisplayName("Color"):
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.couleur)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("places number"):
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.nombrePlace)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("HorsePower"):
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.chevaux)
+                    </dd>
+                    <dt class="th">
+                        @Html.Label("Owner"):
+                    </dt>
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.utilisateur.nom)   @Html.DisplayFor(model => model.utilisateur.prenom)
+                    </dd>
+                </dl>
+            </td>
+            <td>
+                <div class="col-md-1"></div>
+                <div class="col-md-3 ">
+                    <img src="~/images/@Model.image" style="width:400px;height:300px;margin-left:300px" />
+
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</br>
+
+<p>
+    @Html.ActionLink("Rent ", "Reservation", new { id = Model.id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Return", "Index", 1, new { @class = "btn btn-primary" })
+</p>
+
+
+<style>
+    .main {
+        background-color: rgba(48, 80, 150, 0.349);
+        width: 45em;
+        border-radius: 10px;
+        padding: 30px;
+        transition: 0.7s ease;
+        
+    }
+
+    .th {
+        font-size: 15px;
+        letter-spacing: 4px;
+        color: #0064d2;
+    }
+
+    .td {
+        font-size: 15px;
+        color: white;
+    }
+   
+</style>

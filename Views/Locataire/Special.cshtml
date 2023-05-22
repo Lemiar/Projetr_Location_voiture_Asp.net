@@ -1,0 +1,65 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Car Rental An Auto mobile Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Car Rental Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/galleryeffect.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/jquery.flipster.css">
+    <link rel='stylesheet' href='~/css/dscountdown.css' type='text/css' media='all' />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="~/fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="~/fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link href="~/fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"
+
+</head>
+<body>
+    @{
+        Layout = "~/Views/Shared/_LayoutLocat.cshtml";
+    }
+    @model IEnumerable<LoyerVoiture.Models.Voiture>
+
+    @{
+        ViewBag.Title = "Special";
+    }
+
+    <div class="services" id="service">
+        <div class="container">
+            <div class="wthree_title_agile">
+                <h3> Today <span>SPECIAL</span>  DEALS </h3>
+            </div>
+            <p class="sub_para">It’s time to drive</p>
+            <div class="inner_w3l_agile_grids">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 agileits_service_grid_btm_left">
+                        <div class="agileits_service_grid_btm_left1">
+                            <div class="agileits_service_grid_btm_left2">
+                                <h5>@item.nom</h5>
+                                <p>Price<span>:</span>@item.prix Dhs </p>
+
+                            </div>
+                            <img src="~/images/@item.image" alt=" " class="img-responsive">
+                        </div>
+                        @Html.ActionLink(" More details ", "DetailsVoitures", new { id = item.id }, new { @class = "btn btn-primary btn-lg btn-block buy-now" })
+                        <br />
+                    </div>}
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

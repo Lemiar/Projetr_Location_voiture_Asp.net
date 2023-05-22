@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLocat.cshtml";
+}
+
+@model IEnumerable<LoyerVoiture.Models.Voiture>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<div>
+
+
+
+    @using (Html.BeginForm("RechercherDate", "Locataire", FormMethod.Post))
+    {
+        <input type="date" name="date" id="recherche" style="margin-left:680px; height:5px;padding:12px 20px 12px 12px; background-image:url('../Uploads/recherche.jpg');background-repeat:no-repeat;background-position:center" placeholder="saisir votre recherche" />
+        <input type="submit" />
+    }
+
+
+</div>
+
+
+<br />
+<br />
+<div class="row">
+
+</div>
+
+<div class="services" id="service">
+    <div class="container">
+        <div class="wthree_title_agile">
+            <h3> <span>Available</span> Cars </h3>
+        </div>
+        <p class="sub_para">It’s time to drive</p>
+        <div class="inner_w3l_agile_grids">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 agileits_service_grid_btm_left">
+                    <div class="agileits_service_grid_btm_left1">
+                        <div class="agileits_service_grid_btm_left2">
+                            <h5>@item.nom</h5>
+                            <p>Price<span>:</span>@item.prix Dhs </p>
+
+                        </div>
+                        <img src="~/images/@item.image" alt=" " class="img-responsive">
+                    </div>
+                    @Html.ActionLink(" More details ", "DetailsVoitures", new { id = item.id }, new { @class = "btn btn-primary btn-lg btn-block buy-now" })
+                    <br />
+                </div>}
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!--//service-section-->

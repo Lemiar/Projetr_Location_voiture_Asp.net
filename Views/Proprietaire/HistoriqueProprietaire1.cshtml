@@ -1,0 +1,99 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutProp.cshtml";
+}
+
+@model IEnumerable<LocationVoiture.Models.Reservation>
+
+@{
+    ViewBag.Title = "HistoriqueProprietaire";
+}
+<br />
+<br />
+<h2>Car rental history</h2>
+
+<table class="table">
+    <tr>
+        <th class="th">
+            @Html.Label("Client")
+        </th>
+        <th class="th">
+            @Html.Label("Car's reference")
+        </th>
+        <th class="th">
+            @Html.Label("Car's name")
+        </th>
+        <th class="th">
+            @Html.Label("reservation date")
+        </th>
+        <th class="th">
+            @Html.Label("return date")
+        </th>
+        <th class="th">
+            @Html.Label("payment type")
+        </th>
+        <th class="th">
+            @Html.Label("availablity")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr class="td">
+
+    <td>
+
+        @Html.DisplayFor(modelItem => item.utilisateur.nom)  @Html.DisplayFor(modelItem => item.utilisateur.prenom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.voiture.id)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.voiture.nom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date_reservation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date_retour)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TypePaiment)
+
+    </td>
+
+    @if (!item.voiture.etat.Equals("disponible"))
+    {
+        <td>
+
+            @Html.ActionLink("Mark as Rendered", "HistoriqueProprietaire", new { id = item.idReservation }, new { @class = "btn btn-primary  " })
+
+
+
+        </td>
+    }
+    @if (item.voiture.etat.Equals("disponible"))
+    {
+        <td>
+
+            @Html.DisplayName("Available for the moment")
+            @Html.ActionLink("|Client's Details", "DetailsLocataire", new { id = item.utilisateur.id })
+
+        </td>
+    }
+    <td></td>
+
+</tr>
+    }
+
+</table>
+<style>
+    .th {
+        color: antiquewhite;
+    }
+
+    .td {
+        color: white;
+    }
+</style>

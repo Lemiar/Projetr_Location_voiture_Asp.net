@@ -1,0 +1,154 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LoyerVoiture.Models.Utilisateur
+
+@{
+    ViewBag.Title = "Delete Liste fav";
+}
+
+<h2>Delete From Fvorites List</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.nom)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.prenom)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.mdp)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.mdp)
+        </dd>
+
+
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.ville)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.ville)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.CIN)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.CIN)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.statut)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.statut)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.Etat)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Etat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="color:chocolate">
+            <input type="submit" value="Delete" class="btn btn-default" style="background-color:chocolate" /> |
+            @Html.ActionLink("Back", "ListeFavClient")
+        </div>
+    }
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

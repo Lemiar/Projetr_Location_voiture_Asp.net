@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model IEnumerable<LoyerVoiture.Models.ProblemDeclaration>
+
+@{
+    ViewBag.Title = "ListeClientProb";
+}
+
+
+<br />
+<br />
+<h2>List Of Customers Having Problem</h2>
+
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th style="color:white">
+            @Html.Label("Client Name")
+        </th>
+        <th style="color:white">
+            @Html.DisplayName("Problem")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.utilisateur.nom)
+                @Html.DisplayFor(modelItem => item.utilisateur.prenom)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.probleme)
+            </td>
+            <td style="color:chocolate">
+                @Html.ActionLink("Details", "Details", new { id = item.utilisateur.id }, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

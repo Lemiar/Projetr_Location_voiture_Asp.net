@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutProp.cshtml";
+}
+@model LoyerVoiture.Models.Utilisateur
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<br />
+<h2>My Profile</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="th">
+            @Html.DisplayName("first name:")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("Second name:")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("Email:")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("Password:")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.mdp)
+        </dd>
+
+
+        <dt class="th">
+            @Html.DisplayName("City:")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.ville)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("Adress:")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("CIN:")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.CIN)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modify", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Return", "Index")
+</p>
+<style>
+    .th {
+        color: antiquewhite;
+    }
+    .td{
+        color:white
+    }
+</style>

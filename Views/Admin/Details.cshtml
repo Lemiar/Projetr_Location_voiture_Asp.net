@@ -1,0 +1,144 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LoyerVoiture.Models.Utilisateur
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+
+<br />
+<h2>User Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="color:white">
+            @Html.Label("Nom ")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+
+        <dt style="color:white">
+            @Html.Label("Prénom")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+
+        <dt style="color:white">
+            @Html.Label("Email")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt style="color:white">
+            @Html.Label("Mot de passe")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.mdp)
+        </dd>
+
+
+
+        <dt style="color:white">
+            @Html.Label("Ville ")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.ville)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.CIN)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.CIN)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+        <dt style="color:white">
+            @Html.Label("Identité")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.statut)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>@Html.ActionLink("Edit", "Edit", new { id = Model.id })</a> |
+    <a class="btn btn-outline-info"><i class="bi bi-eye"></i>@Html.ActionLink("Back", "Index")</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

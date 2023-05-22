@@ -1,0 +1,123 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLocat2.cshtml";
+}
+@model LoyerVoiture.Models.Utilisateur
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<br />
+<div class="w3l_banner_info">
+    <h4>My  profile</h4>
+
+</div>
+
+<div class="main">
+
+    <table>
+        <tr>
+            <td>
+                <dl class="dl-horizontal">
+                    <dt class="th">
+                        @Html.DisplayName("first name:")
+                    </dt>
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.nom)
+                    </dd>
+                    <dt class="th">
+                        @Html.DisplayName("Second name")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.prenom)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("Email:")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.email)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("Password: ")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.mdp)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("City:")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.ville)
+                    </dd>
+
+
+
+                    <dt class="th">
+                        @Html.DisplayName("Adress: ")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.Adresse)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("CIN:")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.CIN)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("Phone: ")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.Tel)
+                    </dd>
+
+                </dl>
+            </td>
+
+        </tr>
+    </table>
+</div>
+</br>
+<div style="margin-left:100px">
+    @Html.ActionLink("Modify", "Edit", new { id = Model.id }, new { @class = "btn btn-primary" })
+    </hr>
+    @Html.ActionLink("Return", "Index", 1, new { @class = "btn btn-primary" })
+  
+</div>
+<style>
+    .main {
+        margin-left:200px;
+        background-color: rgba(48, 80, 150, 0.349);
+        width: 45em;
+        border-radius: 10px;
+        padding: 30px;
+        transition: 0.7s ease;
+        display:flex;
+       align-content:center;
+    }
+
+  
+
+    .th {
+        font-size: 15px;
+        letter-spacing: 4px;
+        color: #0064d2;
+    }
+
+    .td {
+        font-size: 15px;
+        color: white;
+    }
+</style>

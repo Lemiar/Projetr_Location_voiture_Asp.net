@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LoyerVoiture.Models.Voiture>
+@{
+    Layout = "~/Views/Shared/_LayoutProp2.cshtml";
+}
+@{
+    ViewBag.Title = "Rechercher";
+}
+<br />
+<br />
+<br />
+
+
+<div class="inner_w3l_agile_grids">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 agileits_service_grid_btm_left">
+            <div class="agileits_service_grid_btm_left1">
+                <div class="agileits_service_grid_btm_left2">
+                    <h5>@item.nom</h5>
+                    <p>Price<span>:</span>@item.prix Dhs </p>
+
+                </div>
+                <img src="~/images/@item.image" alt=" " class="img-responsive">
+            </div>
+            @Html.ActionLink(" More details ", "DetailsVoitures", new { id = item.id }, new { @class = "btn btn-primary btn-lg btn-block buy-now" })
+            <br />
+        </div>
+    }
+    <div class="clearfix"> </div>
+</div>
+
+
+

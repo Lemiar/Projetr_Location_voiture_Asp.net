@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLocat2.cshtml";
+}
+@model IEnumerable<LocationVoiture.Models.Reservation>
+
+@{
+    ViewBag.Title = "HistoriqueLocataire";
+}
+<br />
+<h2 style="color: #0064d2; "> Booking  History</h2>
+
+
+<table class="table">
+    <tr style=" color: #999;">
+        <th>
+            @Html.Label("Car' reference")
+
+        </th>
+
+        <th>
+            @Html.Label("Car name")
+
+        </th>
+        <th>
+            @Html.Label("Booking date")
+        </th>
+        <th>
+            @Html.Label("Return date")
+        </th>
+        <th>
+            @Html.Label("Paiement type")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr style="color:white">
+    <td>
+        @Html.DisplayFor(modelItem => item.voiture.id)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.voiture.nom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date_reservation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date_retour)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TypePaiment)
+    </td>
+
+</tr>
+    }
+
+</table>

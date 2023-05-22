@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutProp.cshtml";
+}
+@model LoyerVoiture.Models.Voiture
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<br />
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this car?</h3>
+<div>
+    <hr />
+    <table>
+        <tr>
+            <td>
+                <dl class="dl-horizontal">
+                    <dt class="th">
+                        @Html.DisplayName("car's name")
+                    </dt>
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.nom)
+                    </dd>
+                    <dt class="th">
+                        @Html.DisplayName("Fuel")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.carburant)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayNameFor(model => model.kilometrage)
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.kilometrage)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("Price")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.prix)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("Model")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.model)
+                    </dd>
+
+
+
+                    <dt class="th">
+                        @Html.DisplayName("Color")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.couleur)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("Number of places")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.nombrePlace)
+                    </dd>
+
+                    <dt class="th">
+                        @Html.DisplayName("HorsePower")
+                    </dt>
+
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.chevaux)
+                    </dd>
+                    <dt class="th">
+                        @Html.Label("owner")
+                    </dt>
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.utilisateur.nom)   @Html.DisplayFor(model => model.utilisateur.prenom)
+                    </dd>
+                    <dt class="th">
+                        @Html.Label("Special deal")
+                    </dt>
+                    <dd class="td">
+                        @Html.DisplayFor(model => model.special)
+                    </dd>
+                </dl>
+            </td>
+            <td>
+                <div class="col-md-1"></div>
+                <div class="col-md-3 ">
+                    <img src="~/images/@Model.image" style="width:400px;height:300px;margin-left:300px" />
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="delete" class="btn btn-default" /> |
+            @Html.ActionLink("cancel", "Index", 1, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+<style>
+    .th {
+        color: antiquewhite;
+    }
+
+    .td {
+        color: white;
+    }
+</style>

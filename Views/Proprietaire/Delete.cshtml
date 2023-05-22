@@ -1,0 +1,117 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutProp.cshtml";
+}
+@model LoyerVoiture.Models.Utilisateur
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Are you sure to delete?</h3>
+<div>
+    <h4>Utilisateur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.nom)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.prenom)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.mdp)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.mdp)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.remdp)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.remdp)
+        </dd>
+
+        <dt class="th"  >
+            @Html.DisplayNameFor(model => model.ville)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.ville)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.CIN)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.CIN)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.statut)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.statut)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("back", "Index")
+        </div>
+    }
+</div>
+<style>
+    .th {
+        color: antiquewhite;
+    }
+
+    .td {
+        color: white;
+    }
+</style>

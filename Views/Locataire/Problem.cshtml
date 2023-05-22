@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLocat2.cshtml";
+}
+@model LoyerVoiture.Models.ProblemDeclaration
+
+@{
+    ViewBag.Title = "Problem";
+}
+<br />
+<h2>Tell Us About Your Problems. </h2>
+
+@using (Html.BeginForm("Problem", "Locataire", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div>
+            <p name="poblem" style="color: #f5af02">Your Comments</p>
+            @Html.TextAreaFor(model => model.probleme, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.probleme, "", new { @class = "text-danger" })
+            <input type="submit" value="Send Message" class="btn btn-primary"/>
+             @Html.ActionLink("Return", "Index", 1, new { @class = "btn btn-primary" })
+        </div>
+
+
+    </div>
+}
+

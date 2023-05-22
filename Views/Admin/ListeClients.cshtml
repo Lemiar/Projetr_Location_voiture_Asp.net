@@ -1,0 +1,212 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model IEnumerable<LocationVoiture.Models.Reservation>
+
+@{
+    ViewBag.Title = "HistoriqueProprietaire";
+}
+
+
+
+
+
+
+
+<br />
+<br />
+
+
+<h2>List Of Tenant Customers</h2>
+<br />
+<br />
+
+<table class="table">
+    <tr>
+        <th style="color:white">
+            @Html.Label("Cutomer_ref")
+        </th>
+        <th style="color:white">
+            @Html.Label("Customer")
+        </th>
+
+        <th style="color:white">
+            @Html.Label("Owner_ref")
+        </th>
+
+        <th style="color:white">
+            @Html.Label("Owner ")
+        </th>
+        <th style="color:white">
+            @Html.Label("Car_ref")
+        </th>
+        <th style="color:white">
+            @Html.Label("Car")
+        </th>
+        <th style="color:white">
+            @Html.Label("book Date")
+        </th>
+        <th style="color:white">
+            @Html.Label("Return Date")
+        </th>
+        <th style="color:white">
+            @Html.Label("payment")
+        </th>
+
+        <th style="color:white">
+            @Html.Label("State")
+        </th>
+        <th style="color:white">
+            @Html.Label("Blacklist")
+        </th>
+        <th style="color:white">
+            @Html.Label("Favoritelist")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.utilisateur.id)
+    </td>
+
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.utilisateur.nom)  @Html.DisplayFor(modelItem => item.utilisateur.prenom)
+    </td>
+
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.voiture.utilisateur.id)
+    </td>
+    <td style="color:white">
+
+        @Html.DisplayFor(modelItem => item.voiture.utilisateur.nom)  @Html.DisplayFor(modelItem => item.voiture.utilisateur.prenom)
+    </td>
+
+
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.voiture.id)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.voiture.nom)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.date_reservation)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.date_retour)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.TypePaiment)
+
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.voiture.etat)
+
+    </td>
+    <td style="color:white">
+        @if (item.utilisateur.Etat == null)
+        {
+            @Html.ActionLink("Add to blacklist", "ListeNoir", new { id = item.id_proprietaire }, new { @class = "btn btn-primary " })
+        }
+        else if (!item.utilisateur.Etat.Equals("ListeNoir"))
+        {
+            @Html.ActionLink("Add to blacklist", "ListeNoir", new { id = item.id_proprietaire }, new { @class = "btn btn-primary " })
+
+        }
+
+        else
+        {
+            @Html.DisplayName("Already in blacklist")
+
+        }
+
+
+
+    </td>
+    <td style="color:white">
+        @if (item.utilisateur.Etat == null)
+        {
+            @Html.ActionLink("Add to favorites list", "ListeFav", new { id = item.id_proprietaire }, new { @class = "btn btn-primary " })
+
+
+        }
+        else if (!item.utilisateur.Etat.Equals("ListeFav"))
+        {
+            @Html.ActionLink("Add to favorites list", "ListeFav", new { id = item.id_proprietaire }, new { @class = "btn btn-primary " })
+
+        }
+        else
+        {
+            @Html.DisplayName("Already in favorites list")
+
+        }
+
+    </td>
+    <td>
+    </td>
+</tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,261 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Car Rental An Auto mobile Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Car Rental Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/galleryeffect.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/jquery.flipster.css">
+    <link rel='stylesheet' href='~/css/dscountdown.css' type='text/css' media='all' />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="~/fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="~/fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link href="~/fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+</head>
+<body>
+
+
+    <!-- banner -->
+    <div>
+        <!-- header -->
+        <div class="header-w3l-agile">
+            <div class="header_left">
+                <ul>
+                    <li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info@example.com</a></li>
+                    <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+123 456 7890</li>
+                </ul>
+            </div>
+            <div class="header_right">
+                <div class="w3ls-social-icons">
+                    <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                    <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                    <a class="pinterest" href="#"><i class="fa fa-google-plus"></i></a>
+                    <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- //header -->
+        <div class="container">
+            <div class="header-nav">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><span class="logo-c">C</span><i class="fa fa-car" aria-hidden="true"></i>Rental<p class="sub-cap">Drive to Any where</p></h1>
+                    </div>
+                    <!-- navbar-header -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Available Cars", "Index", "Locataire")</li>
+                            <li>@Html.ActionLink("Special Deals", "Special", "Locataire")</li>
+                            <li>@Html.ActionLink("My Profile", "DetailsLocataire", "Locataire", Session["id"])</li>
+                            <li>@Html.ActionLink("History", "HistoriqueLocataire", "Locataire")</li>
+                            <li>@Html.ActionLink("Support", "Problem", "Locataire")</li>
+                            <li>@Html.ActionLink("log out ", "Index", "Home")</li>
+                        </ul>
+
+                    </div>
+                    <div> </div>
+                </nav>
+
+            </div>
+        </div>
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+
+        </div>
+    </div>
+    <div class="newsletter">
+        <div class="container">
+            <div class="col-md-3 footer-grid">
+                <h3>About us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.</p>
+                <div class="w3ls_newsletter_social">
+                    <ul class="agileits_social_list">
+                        <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 footer-grid">
+                <h3>Recently Launched</h3>
+
+                <div class="footer-grid1">
+                    <div class="footer-grid1-left">
+                        <a href="#"><img src="~/images/s3.jpg" alt=" " class="img-responsive"></a>
+                    </div>
+                    <div class="footer-grid1-right">
+                        <a href="#">Lorem ipsum dolor eveniet ut molesti</a>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="footer-grid1">
+
+                    <div class="footer-grid1-left">
+                        <a href="#"><img src="~/images/s1.jpg" alt=" " class="img-responsive"></a>
+                    </div>
+                    <div class="footer-grid1-right">
+                        <a href="#">Lorem ipsum dolor earum rerum tenet</a>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h3>From Flickr</h3>
+                <div class="footer-grid-instagram">
+                    <a href="#"><img src="~/images/s3.jpg" alt=" " class="img-responsive"></a>
+                </div>
+                <div class="footer-grid-instagram">
+                    <a href="#"><img src="~/images/s4.jpg" alt=" " class="img-responsive"></a>
+                </div>
+                <div class="footer-grid-instagram">
+                    <a href="#"><img src="~/images/s5.jpg" alt=" " class="img-responsive"></a>
+                </div>
+                <div class="footer-grid-instagram">
+                    <a href="#"><img src="~/images/s1.jpg" alt=" " class="img-responsive"></a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+    </div>
+    <div class="w3l_footer_agile">
+        <p>© @DateTime.Now.Year Car Rental.</p>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="~/js/jquery-2.1.4.min.js"></script>
+    <!--scripts-->
+    <!-- Counter required files -->
+    <script type="text/javascript" src="~/js/dscountdown.min.js"></script>
+    <script src="~/js/demo-1.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.demo2').dsCountDown({
+                endDate: new Date("December 24, 2020 23:59:00"),
+                theme: 'black'
+            });
+        });
+    </script>
+    <!-- //Counter required files -->
+    <!--//scripts-->
+    <script type="text/javascript" src="~/js/move-top.js"></script>
+    <script type="text/javascript" src="~/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!--banner Slider starts Here-->
+    <script src="~/js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider3").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+    </script>
+    <script src="~/js/modernizr.custom.js"></script>
+
+
+    <script src="~/js/jquery.flipster.js"></script>
+    <script>
+
+        $(function () { $(".flipster").flipster({ style: 'carousel', start: 0 }); });
+
+
+    </script>
+    <!--banner Slider starts Here-->
+    <!-- required-js-files-->
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <script src="~/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 5,
+                itemsDesktop: [768, 4],
+                itemsDesktopSmall: [414, 3],
+                lazyLoad: true,
+                autoPlay: true,
+                navigation: true,
+
+                navigationText: false,
+                pagination: false,
+
+            });
+
+        });
+    </script>
+    <!--//required-js-files-->
+    <!-- smooth scrolling -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- //smooth scrolling -->
+    <script type="text/javascript" src="~/js/bootstrap.js"></script>
+
+</body>
+</html>
+

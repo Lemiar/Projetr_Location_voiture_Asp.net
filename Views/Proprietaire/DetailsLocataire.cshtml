@@ -1,0 +1,92 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutProp.cshtml";
+}
+@model LoyerVoiture.Models.Utilisateur
+
+<br />
+<br />
+
+<h2>Client Details</h2>
+
+<div>
+
+    <dl class="dl-horizontal">
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.nom)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.prenom)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.mdp)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.mdp)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.ville)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.ville)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.CIN)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.CIN)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Return", "Index")
+</p>
+
+<style>
+    .th {
+        color: papayawhip;
+    }
+
+    .td {
+        color: white;
+    }
+</style>

@@ -1,0 +1,140 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LoyerVoiture.Models.Utilisateur
+
+@{
+    ViewBag.Title = "ListeNoir";
+}
+
+
+
+
+
+
+
+<br />
+<h2>Add To Blacklist</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="color:white">
+            @Html.DisplayName("Name ")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayName("LastName")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.mdp)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.mdp)
+        </dd>
+
+
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.ville)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.ville)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.CIN)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.CIN)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+        <dt style="color:white">
+            @Html.DisplayName("Identity")
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.statut)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Add" class="btn btn-default" style="background-color:chocolate" /> |
+            @Html.ActionLink("Back", "ListeClients", 1, new { @class = "btn btn-default" })
+        </div>
+    }
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

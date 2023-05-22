@@ -1,0 +1,161 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLocat2.cshtml";
+}
+@model LoyerVoiture.Models.Voiture
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<h2>Car booking </h2>
+<h3>Enter appropriate information to  book this car </h3>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="main">
+        <hr />
+        <table>
+            <tr>
+                <td>
+                    <dl class="dl-horizontal">
+                        <dt class="th">
+                            @Html.Label("Car name:")
+                        </dt>
+                        <dd class="td">
+                            @Html.DisplayFor(model => model.nom)
+                        </dd>
+                        <dt class="th">
+                            @Html.Label("Fuel:")
+                        </dt>
+
+                        <dd class="td">
+                            @Html.DisplayFor(model => model.carburant)
+
+                        </dd>
+
+                        <dt class="th">
+                            @Html.DisplayNameFor(model => model.kilometrage):
+                        </dt>
+
+                        <dd class="td">
+                            @Html.DisplayFor(model => model.kilometrage)
+                        </dd>
+
+                        <dt class="th">
+                            @Html.Label("Price:")
+                        </dt>
+
+                        <dd class="td">
+                            @Html.DisplayFor(model => model.prix)
+                        </dd>
+
+                        <dt class="th">
+                            @Html.Label("Model :")
+                        </dt>
+
+                        <dd class="td">
+                            @Html.DisplayFor(model => model.model)
+                        </dd>
+
+
+
+                        <dt class="th">
+                            @Html.Label("Color:")
+                        </dt>
+
+                        <dd class="td">
+                            @Html.DisplayFor(model => model.couleur)
+                        </dd>
+
+                        <dt class="th">
+                            @Html.Label("Place number :")
+                        </dt>
+
+                        <dd class="td">
+                            @Html.DisplayFor(model => model.nombrePlace)
+                        </dd>
+
+                        <dt class="th">
+                            @Html.Label("Horse Power:")
+                        </dt>
+
+                        <dd class="td">
+                            @Html.DisplayFor(model => model.chevaux)
+                        </dd>
+                        <dt class="th">
+                            @Html.Label("Booking date:")
+                        </dt>
+                        <dd>
+                            <input type="date" name="date_reservation" />
+                        </dd>
+
+                        <dt class="th">
+                            @Html.Label("Return Date:")
+                        </dt>
+                        <dd>
+                            <input type="date" name="date_retour" />
+                        </dd>
+
+                        <dt class="th">
+                            @Html.Label("paiement type:")
+                        </dt>
+                        <dd >
+                            @Html.DropDownList("TypePaiment", new List<SelectListItem> { new SelectListItem { Text = "Cash", Value = "Cash" }, new SelectListItem { Text = "Banq card", Value = "Banq card" }, new SelectListItem { Text = " Check", Value = "Check" } }, "Select a paiement type")
+
+
+
+                        </dd>
+
+                    </dl>
+                </td>
+                <td>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3 ">
+                       <img src="~/images/@Model.image" style="width:400px;height:300px;margin-left:100px" />
+
+                    </div>
+                </td>
+
+
+            </tr>
+        </table>
+    </div>
+
+
+
+
+
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Book" class="btn btn-primary" />
+        @Html.ActionLink("Return", "DetailsVoitures", new { id = Model.id }, new { @class = "btn btn-primary" })
+
+    </div>
+
+}
+
+
+<style>
+    .main {
+        background-color: rgba(48, 80, 150, 0.349);
+        width: 45em;
+        border-radius: 10px;
+        padding: 30px;
+        transition: 0.7s ease;
+    }
+
+    .th {
+        font-size: 15px;
+        letter-spacing: 4px;
+        color: #0064d2;
+    }
+
+    .td {
+        font-size: 15px;
+        color: white;
+    }
+</style>

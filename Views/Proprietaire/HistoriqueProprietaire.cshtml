@@ -1,0 +1,84 @@
+﻿@model LocationVoiture.Models.Reservation
+@{
+    Layout = "~/Views/Shared/_LayoutProp.cshtml";
+}
+@{
+    ViewBag.Title = "HistoriqueProprietaire";
+}
+<br />
+<br />
+<h2>Are you sure this car is returned?</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="th">
+            @Html.DisplayName("Car's name")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.voiture.nom)
+        </dd>
+        <dt class="th">
+            @Html.DisplayName("Cient")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.utilisateur.nom) @Html.DisplayFor(model => model.utilisateur.prenom)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("Fuel")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.voiture.carburant)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("Reservation date")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.date_reservation)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("return date")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.date_retour)
+        </dd>
+
+        <dt class="th">
+            @Html.DisplayName("payment type")
+        </dt>
+
+        <dd class="td">
+            @Html.DisplayFor(model => model.TypePaiment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Confirm" class="btn btn-primary" /> |
+            @Html.ActionLink("Back", "Index")
+        </div>
+    }
+</p>
+<style>
+    .th {
+        color: antiquewhite;
+    }
+
+    .td {
+        color: white;
+    }
+</style>

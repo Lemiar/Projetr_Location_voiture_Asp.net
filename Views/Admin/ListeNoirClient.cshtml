@@ -1,0 +1,110 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model IEnumerable<LoyerVoiture.Models.Utilisateur>
+
+@{
+    ViewBag.Title = "ListeNoirClient";
+}
+
+
+
+<br />
+<h2>Clients Blacklist</h2>
+<table class="table">
+    <tr>
+        <th style="color:white">
+            @Html.DisplayName("Name")
+        </th>
+        <th style="color:white">
+            @Html.DisplayName("LastName")
+        </th>
+        <th style="color:white">
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th style="color:white">
+            @Html.DisplayNameFor(model => model.mdp)
+        </th>
+
+        <th style="color:white">
+            @Html.DisplayNameFor(model => model.ville)
+        </th>
+        <th style="color:white">
+            @Html.DisplayNameFor(model => model.Adresse)
+        </th>
+        <th style="color:white">
+            @Html.DisplayNameFor(model => model.CIN)
+        </th>
+        <th style="color:white">
+            @Html.DisplayNameFor(model => model.Tel)
+        </th>
+        <th style="color:white">
+            @Html.DisplayName("Identity")
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.prenom)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.mdp)
+            </td>
+
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.ville)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.Adresse)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.CIN)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.Tel)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.statut)
+            </td>
+
+            <td style="color:chocolate">
+                @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Delete", "DeleteListeNoir", new { id = item.id }, new { @class = "btn btn-default" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
